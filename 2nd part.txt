@@ -1,0 +1,36 @@
+1.
+const compose = (...fns) => x => fns.reduceRight((y, f) => f(y), x); 
+const double = x => x * 2
+const square = x => x * x
+
+// function composition
+var output_final = compose((square, double)(5));
+console.log(output_final);
+
+2
+const square = function(n) {return n*n}
+const douvle= function(n) {return n*2}
+const result = compose(square,double)
+
+function compose(square,double)
+{
+	return x=> square(double(x));
+}
+console.log(result(2))
+3.
+const isEven = x => x%2 == 0
+const find = x => isEven(x[0])
+var output = find([10,6], isEven)
+
+console.log("checking isEven",output)
+4.
+
+function map(allArr){
+    var newArr=[];
+for(var i =0; i< allArr.length; i++){
+    newArr.push(Math.pow(allArr[i], 2));
+}
+ console.log("checking newArr",newArr)
+}
+
+map([2,5,8,9])
